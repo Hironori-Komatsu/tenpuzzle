@@ -19,7 +19,7 @@ int main(){
   int inputNumber;
   int n1,n2,n3,n4;
 
-  cout << "数値を入力してください:" << endl;
+  cout << "4桁の数字を入力してください:" << endl;
   cin >> inputNumber;
 
   n1 = inputNumber/1000;
@@ -28,8 +28,6 @@ int main(){
   n4 = inputNumber % 10;
 
   char op[] = {'+', '-' , '*', '/'};
-  bool existTen = false;
-  cout << existTen << endl;
 
   //四則演算の64通りの全探索
   for(int i = 0; i < 4; i++){
