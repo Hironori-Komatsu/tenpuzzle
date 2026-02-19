@@ -28,7 +28,7 @@ int main(){
   char op[] = {'+','-','*','/'};
 
   //入力
-  cout << "4桁の数字を入力してください" << endl;
+  cout << "4桁の数字を入力してください:" << endl;
   cin >> inputNumber;
 
   //数字の分割
