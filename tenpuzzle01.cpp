@@ -30,7 +30,6 @@ int main(){
   //入力
   cout << "4桁の数字を入力してください:" << endl;
   cin >> inputNumber;
-
   //数字の分割
   n1 = inputNumber/1000;
   n2 = (inputNumber/100) % 10;
