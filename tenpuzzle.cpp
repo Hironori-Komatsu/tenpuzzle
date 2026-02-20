@@ -30,8 +30,7 @@ int main(){
   //数字の分割
   for(int d = 0; d < inputNumber.size(); d++){
     if(inputNumber.size() != 4){
-      cout << "4桁の数字を入力してください" << endl;
-
+      cout << "「4桁」の数字を入力してください" << endl;
       return 1;
     }
 
@@ -40,7 +39,6 @@ int main(){
     }
     else{
       cout << "文字が入力されています" << endl;
-
       return 1;
     }   
   }
@@ -54,25 +52,25 @@ int main(){
        char op2 = op[j];
        char op3 = op[k];
         
-      //()の位置の通り数(5通り)
-      double position[5];
-      //(((n1 op1 n2) op2 n3) op3 n4)
-      position[0] = calc(calc(calc(digit[0], digit[1], op1),digit[2],op2),digit[3],op3);
-    
-      //((n1 op1 (n2 op2 n3)) op3 n4)
-      position[1] = calc(calc(digit[0],calc(digit[1],digit[2],op2),op1),digit[3],op3);
-
-      //((n1 op1 n2) op2 (n3 op3 n4))
-      position[2] = calc(calc(digit[0],digit[1],op1),calc(digit[2],digit[3],op3),op2);
+        //()の位置の通り数(5通り)
+        double position[5];
+        //(((n1 op1 n2) op2 n3) op3 n4)
+        position[0] = calc(calc(calc(digit[0], digit[1], op1),digit[2],op2),digit[3],op3);
       
-      //(n1 op1 ((n2 op2 n3) op3 n4))
-      position[3] = calc(digit[0],calc(calc(digit[1],digit[2],op2),digit[3],op3),op1);
+        //((n1 op1 (n2 op2 n3)) op3 n4)
+        position[1] = calc(calc(digit[0],calc(digit[1],digit[2],op2),op1),digit[3],op3);
 
-      //(n1 op1 (n2 op2 (n3 op3 n4)))
-      position[4] = calc(digit[0],calc(digit[1],calc(digit[2],digit[3],op3),op2),op1);
+        //((n1 op1 n2) op2 (n3 op3 n4))
+        position[2] = calc(calc(digit[0],digit[1],op1),calc(digit[2],digit[3],op3),op2);
+        
+        //(n1 op1 ((n2 op2 n3) op3 n4))
+        position[3] = calc(digit[0],calc(calc(digit[1],digit[2],op2),digit[3],op3),op1);
 
-          
-        //結果
+        //(n1 op1 (n2 op2 (n3 op3 n4)))
+        position[4] = calc(digit[0],calc(digit[1],calc(digit[2],digit[3],op3),op2),op1);
+
+            
+          //結果
         if(position[0] == 10.0){
           cout << "(((" << digit[0] << op1 << digit[1] << ")" << op2 << digit[2] << ")" << op3 << digit[3] << ")" << '=' << position[0] << endl;
         }
@@ -89,8 +87,11 @@ int main(){
           cout << "(" << digit[0] << op1  << "(" << digit[1] << op2 << "(" << digit[2] << op3 << digit[3] << ")))" << '=' << position[4] << endl;
         }
 
+
       }
         
     }  
   }
+
+  return 0;
 }
