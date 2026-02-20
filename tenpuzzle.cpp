@@ -70,24 +70,14 @@ int main(){
 
             
         //結果
-        if(position[0] == 10.0){
-          cout << "(((" << digit[0] << op1 << digit[1] << ")" << op2 << digit[2] << ")" << op3 << digit[3] << ")" << '=' << position[0] << endl;
+        for(int r = 0; r < sizeof(position); r++){
+            if(position[r] == 10.0){
+              cout << digit[0] << op1 << digit[1] << op2 << digit[2] << op3 << digit[3] << '=' << position[0] << endl;
+            }
         }
-        if(position[1] == 10.0){
-          cout << "((" << digit[0] << op1 << "(" << digit[1] << op2 << digit[2] << "))" << op3 << digit[3] << ")" << '=' << position[1] << endl;
-        }
-        if(position[2] == 10.0){
-          cout << "((" << digit[0] << op1  << digit[1] << ")" << op2 << "(" << digit[2] << op3 << digit[3] << "))" << '=' << position[2] << endl;
-        }
-        if(position[3] == 10.0){
-          cout << "(" << digit[0] << op1  << "((" << digit[1] << op2  << digit[2] << ")" << op3 << digit[3] << "))" << '=' << position[3] << endl;
-        }  
-        if(position[4] == 10.0){
-          cout << "(" << digit[0] << op1  << "(" << digit[1] << op2 << "(" << digit[2] << op3 << digit[3] << ")))" << '=' << position[4] << endl;
-        }
-
       }        
     }  
   }
+  
   return 0;
 }
