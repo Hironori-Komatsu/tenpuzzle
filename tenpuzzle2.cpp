@@ -94,14 +94,35 @@ int main(){
 
   string input;
   vector<char> num;
+  bool validated = false;
 
+ //修正中
  //入力
-  cout << "4桁の数字の入力" << endl;
-  cin >> input;
+  while(!validated){
+    cout << "4つの数字を入力してください" << endl;
+    cin >> input;
 
-  for(int i = 0; i < input.size(); i++){
-    num.push_back(input[i]);
+    if(input.size() == 4){
+        for(int i = 0; i < input.size(); i++){
+          if(isdigit(input[i])){
+            num.push_back(input[i]);
+            validated = true;
+          }
+          else{
+            cout << "文字が入力されています" << endl;
+            break;
+          }
+        }
+    }
+    else if(input.size() < 4){
+      cout << "4つより少なく入力されています" << endl;
+    }
+    else{
+      cout << "4つより多く入力されています" << endl;
+    }
   }
+
+  
   
   char a = num[0];
   char b = num[1];
@@ -115,7 +136,8 @@ int main(){
   for(char op1 : ops){
     for(char op2 : ops){
        for(char op3 : ops){
-          //数字の順番は固定
+
+          //
           vector<char> expr = {a,op1,b,op2,c,op3,d};
 
           vector<char> rpn = replace(expr);
@@ -123,7 +145,8 @@ int main(){
           double answer = solve(rpn);
 
           if(answer == 10){
-            for(char t : rpn) cout << t;
+            for(char rpn_expr : rpn) 
+            cout << rpn_expr;
             cout << "\n";
             cout << answer << endl;
           }
@@ -132,5 +155,6 @@ int main(){
     }
   }
 
+  return 0;
 }
 
