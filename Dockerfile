@@ -9,9 +9,10 @@ RUN apt install -y tzdata
 ENV TZ=Asia/Tokyo
 
 #開発環境のシステムインストール
-RUN apt install -y \ 
+RUN apt-get update && apt-get install -y \ 
  wget \
- g++ \
+ gdb \
  cmake \
  git \
- clang-format
+ clang-format \
+ build-essential
