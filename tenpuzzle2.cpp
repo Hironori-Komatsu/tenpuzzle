@@ -108,7 +108,6 @@ int main(){
   char c = num[2];
   char d = num[3];
 
-  cout << num[0] << endl;
 
   vector<char> ops = {'+','-','*','/'};
 
