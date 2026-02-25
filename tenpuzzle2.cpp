@@ -59,11 +59,11 @@ int priority(char op){
 }
 
 //中置換→後置換
-vector<char> replace(const vector<char>& exdr){
+vector<char> replace(const vector<char>& expr){
   vector<char> rpn_queue;
   stack<char> op_stack;
 
-  for(char c : exdr){
+  for(char c : expr){
 
     //数字の場合
     if(isdigit(c)){
@@ -109,15 +109,16 @@ int main(){
   char d = num[3];
 
 
+  //64通り
   vector<char> ops = {'+','-','*','/'};
 
   for(char op1 : ops){
     for(char op2 : ops){
        for(char op3 : ops){
           //数字の順番は固定
-          vector<char> exdr = {a,op1,b,op2,c,op3,d};
+          vector<char> expr = {a,op1,b,op2,c,op3,d};
 
-          vector<char> rpn = replace(exdr);
+          vector<char> rpn = replace(expr);
 
           double answer = solve(rpn);
 
@@ -133,4 +134,3 @@ int main(){
 
 }
 
-//vector,queue問題
