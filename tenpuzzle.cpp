@@ -136,8 +136,6 @@ int main(){
   for(char op1 : ops){
     for(char op2 : ops){
        for(char op3 : ops){
-
-          //
           vector<char> expr = {a,op1,b,op2,c,op3,d};
 
           vector<char> rpn = replace(expr);
