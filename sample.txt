@@ -13,7 +13,6 @@
 →式などは一緒に出力をするのか
 
 
-
 1 * 2 + 3 * 4
 
 1 / 2 * 3 - 4
@@ -47,3 +46,48 @@ gdbにて確認
 
 string inputに文字が含まれているか
 確認する関数を検索中
+
+及第点
+良かった点
+エラー入力対応しているところ
+stackに気づけたところ
+しっかり調べられたところ(操車場アルゴリズムなど無駄にはならない)
+
+悪い点・修正点
+書き方がよくない
+stdやインデント、段落など
+
+命名が悪い
+統一性を持つべき
+stやstackなどに分けるのではなく
+
+入力部
+全角の場合
+二重ループを使わずに表現できる
+charでとっているが、charでなくてもよいかもしれない
+
+char operators[3] = {op1,op2,op3}
+
+  for(int i = 0; i < 3; i++){
+    char op = operators[i]
+    int n1 = int(num[i]);
+    int n2 = int(num[i + 1]);
+    int n3 = int(num[i + 2]);  
+  }
+
+式
+1+2*3+4
+
+stack
+数値stack:1234
+演算子stack:/*-
+
+1が数値stackに
++が演算子stackに
+2を数値stackに
+*が演算子stackに→この時点で次にくる数値と計算を行う
+となるとstackに入れる前に計算を行う？
+それともstackに入れてから計算を行う？
+
+https://zenn.dev/yumyum116/articles/calculation_rounding_error
+
